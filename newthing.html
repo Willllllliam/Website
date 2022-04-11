@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>START</title>
+  <link id="fav" rel="icon" type="image/png" href="./favs/newfav.png"/>
+  <style>
+    button {
+      width: 25%;
+      height: 85px;
+    }
+    #left {
+      float: left;
+      width: 80%;
+      height: 100%;
+    }
+    #right {
+      position: fixed;
+      width: 20%;
+      height: 100%;
+      right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+  <div id="left">
+    <a id="exit" href="Web page.html">leave here now</a>
+    <h1 id="t"></h1>
+    <p>title (type a secret code)</p>
+    <p id="p1">paragraph text</p>
+    <h2 id="h">heading</h2>
+    <p id="p2">more text</p>
+    <p id="p3">even more text</p>
+  </div>
+  <div id="right">
+    <button onclick="Press(11)">A</button><button onclick="Press(12)">B</button><button onclick="Press(13)">C</button><button onclick="Press(14)">D</button></span><br>
+    <button onclick="Press(15)">E</button><button onclick="Press(16)">F</button><button onclick="Press(17)">G</button><button onclick="Press(18)">H</button><br>
+    <button onclick="Press(19)">I</button><button onclick="Press(20)">J</button><button onclick="Press(21)">K</button><button onclick="Press(22)">L</button><br>
+    <button onclick="Press(23)">M</button><button onclick="Press(24)">N</button><button onclick="Press(25)">O</button><button onclick="Press(26)">P</button><br>
+    <button onclick="Press(27)">Q</button><button onclick="Press(28)">R</button><button onclick="Press(29)">S</button><button onclick="Press(30)">T</button><br>
+    <button onclick="Press(31)">U</button><button onclick="Press(32)">V</button><button onclick="Press(33)">W</button><button onclick="Press(34)">X</button><br>
+    <button onclick="Press(35)">Y</button><button onclick="Press(36)">Z</button><button onclick="Press(1)">1</button><button onclick="Press(2)">2</button><br>
+    <button onclick="Press(3)">3</button><button onclick="Press(4)">4</button><button onclick="Press(5)">5</button><button onclick="Press(6)">6</button><br>
+    <button onclick="Press(7)">7</button><button onclick="Press(8)">8</button><button onclick="Press(9)">9</button><button onclick="Press(0)">0</button><br>
+  </div>
+  </div>
+  <script>
+    var chars = ["0","1","2","3","4","5","6","7","8","9","","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    function Press(b) {
+      document.getElementById("t").innerHTML = document.getElementById("t").innerHTML + chars[b];
+      if (document.getElementById("t").innerHTML == "START") {
+        document.getElementById("p1").innerHTML = "this page is full of nonsense. it doesn't Matter. you aren't gettINg any clues out of here. you should just give <u>up</u>.";
+        document.getElementById("t").innerHTML = "START ";
+      } else if (document.getElementById("t").innerHTML == "START UP") {
+        document.getElementById("h").innerHTML = "thE <u>3rd</u> Step";
+        document.getElementById("t").innerHTML = "START UP ";
+      } else if (document.getElementById("t").innerHTML == "START UP 3RD") {
+        document.getElementById("p2").innerHTML = "you probably think that the last step Will revEal a new sElector code. well, you're wrong. you aren't getting anything out of these Paragraphs. they'rE barely even paragRaphs. this is the step that is <u>longest</u>.";
+        document.getElementById("t").innerHTML = "START UP 3RD ";
+      } else if (document.getElementById("t").innerHTML == "START UP 3RD LONGEST") {
+        document.getElementById("p3").innerHTML = "i told you. this isn't a code. that's a weird sentence you made at the top for nothing. (just because this isn't a code doesn't mean there isn't a code for The Selector on this page somewhere <small>(There might even be another code for this page)</small>)";
+      } else if (document.getElementById("t").innerHTML == "MINESWEEPER") {
+        document.getElementById("exit").innerHTML = "ohh, look! this changed!";
+        document.getElementById("exit").href = "Mines.html"
+      }
+    }
+  </script>
+</body>
+</html>
