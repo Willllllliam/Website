@@ -1,0 +1,105 @@
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  background-color: #dddddd;
+  border-radius: 10px;
+  border-style: none;
+}
+
+button:hover {
+  background-color: #d2d2d2;
+}
+
+button:active {
+  background-color: #bbbbbb;
+}
+
+input {
+  height: 20px;
+  width: 60px;
+  background-color: #dddddd;
+  border-radius: 10px;
+  border-style: solid;
+  text-align: center;
+}
+
+input:focus {
+  background-color: #d2d2d2;
+}
+
+.help {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 75%;
+  height: 75%;
+  background-color: white;
+  z-index: 10;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dddddd;
+  padding-left: 50px;
+}
+
+.help p {
+  text-align: left;
+}
+
+.helpButton {
+  position: fixed;
+  top: 10px;
+}
+
+.guess {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.guess > svg {
+  width: auto;
+  height: 200px;
+}
+
+.result > svg {
+  width: auto;
+  height: 100px;
+}
+
+path.segment {
+  fill-rule: evenodd;
+}
+
+.segment.blank {
+  fill: #dddddd;
+}
+
+.segment.guessing {
+  fill: #668866;
+}
+
+.segment.invalid {
+  fill: #aa1111;
+}
+
+.segment.correct {
+  fill: #11aa11;
+}
+
+.segment.incorrect {
+  fill: #555555;
+}
+
+.submit, .random {
+  width: 100px;
+  height: 40px;
+  margin-bottom: 10px;
+}
