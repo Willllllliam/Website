@@ -16,6 +16,10 @@ p {
   font-size: 12pt;
 }
 
+a {
+  font-size: 12pt;
+}
+
 #inconspicuousButton {
   position: absolute;
   bottom: 0;
@@ -25,4 +29,7 @@ p {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+#secretLink {
+  font-family: 'Times New Roman', Times, serif;
 }
