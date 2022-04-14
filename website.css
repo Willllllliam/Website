@@ -3,7 +3,8 @@ body {
 }
 
 h1 {
-  font-size: 24pt;
+  font-size: 40pt;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 h3 {
