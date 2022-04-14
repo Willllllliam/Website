@@ -7,10 +7,12 @@
 //                                                     
 //    /  |      \ /   |   |     |     |   |    /    |  
 //  -                - -   - -   - -         -         
-$("#inconspicuousButton").click(function () {
-  $("#anotherButton").show();
-});
-
-$("#anotherButton").click(function () {
-  $("#secretLink").show();
+$(document).ready(function () {
+  $("#inconspicuousButton").click(function () {
+    $("#anotherButton").show();
+  });
+  
+  $("#anotherButton").click(function () {
+    $("#secretLink").show();
+  });
 });
