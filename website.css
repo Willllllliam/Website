@@ -1,1 +1,15 @@
-/*test commit*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 24pt;
+}
+
+h3 {
+  font-size: 18pt;
+}
+
+p {
+  font-size: 12pt;
+}
