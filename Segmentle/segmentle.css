@@ -44,14 +44,14 @@ input:focus {
   border-width: 2px;
   border-color: #dddddd;
   padding-left: 50px;
+  text-align: left;
 }
 
-.help p {
-  text-align: left;
+.help h1 {
+  text-align: center;
 }
 
 .help a {
-  text-align: left;
   color: #11aa11;
 }
 
