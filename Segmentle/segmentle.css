@@ -50,6 +50,11 @@ input:focus {
   text-align: left;
 }
 
+.help a {
+  text-align: left;
+  color: #11aa11;
+}
+
 .helpButton {
   position: fixed;
   top: 10px;
