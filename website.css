@@ -31,7 +31,8 @@ a {
 }
 
 .conwrite {
-  font-family: conwrite
+  font-family: conwrite;
+  font-weight: normal;
 }
 
 #inconspicuousButton {
