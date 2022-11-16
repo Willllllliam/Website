@@ -35,6 +35,14 @@ a {
   font-weight: normal;
 }
 
+.column {
+  float: left;
+}
+
+.c50 {
+  width: 50%;
+}
+
 #inconspicuousButton {
   position: absolute;
   bottom: 0;
