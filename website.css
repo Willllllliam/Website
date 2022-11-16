@@ -26,6 +26,10 @@ a {
   font-size: 12pt;
 }
 
+.bigp {
+  font-size: 18pt;
+}
+
 .conwrite {
   font-family: conwrite
 }
