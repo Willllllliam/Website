@@ -33,6 +33,7 @@ a {
 .conwrite {
   font-family: conwrite;
   font-weight: normal;
+  line-height: 1.0662;
 }
 
 .column {
