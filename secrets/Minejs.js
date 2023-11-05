@@ -68,7 +68,7 @@ function reveal(square) {
       if(mines[Math.floor(square/100)-10][square % 100 - 10] === 9) {
         document.getElementById("top").innerHTML = "YOU LOSE!";
         document.getElementById(square).innerHTML = "&#9728;";
-        document.getElementById("fav").href = "minefav.png"
+        document.getElementById("fav").href = "./favs/minefav.png"
         for(let x = 0; x < 16; x++) {
           for(let y = 0; y < 16; y++) {
             let s = 100*(y+10)+x+10
@@ -102,7 +102,7 @@ function reveal(square) {
       }
     }
     if (flags === numMines) {
-      document.getElementById("top").innerHTML = "YOU WIN!";
+      document.getElementById("top").innerHTML = "YOU WIN! <small>check out the sequel, out now, at things in places!</small>";
     }
   }
 }
