@@ -229,6 +229,7 @@ function generate() {
   }
 }
 function reveal(square) {
+  console.log(square)
   console.log(square % 100 - 10);
   console.log(Math.floor(square/100)-10);
   console.log("\n");
