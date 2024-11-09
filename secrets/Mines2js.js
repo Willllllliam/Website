@@ -235,7 +235,7 @@ function reveal(square) {
   console.log("\n");
   if (dig) {
     // Digging
-    if (!document.getElementById(square).classList.contains("flag")) {
+    if (!document.getElementById(square).classList.contains("flag") && !document.getElementById(square).classList.contains("r")) {
       document.getElementById(square).classList.add("r");
       if(absMines[Math.floor(square/100)-10][square % 100 - 10] === 9) {
         document.getElementById("top").innerHTML = "YOU LOSE!";
@@ -254,36 +254,37 @@ function reveal(square) {
             }
           }
         }
-      } else if (absMines[Math.floor(square/100)-10][square % 100 - 10] === 0) {
-        let x = square % 100 - 10;
-        let y = Math.floor(square/100)-10;
-        if (x-1 >= 0) {
-          reveal(100*(y+10)+x+9);
-        }
-        if (x+1 < 16) {
-          reveal(100*(y+10)+x+11);
-        }
-        if (y+1 < 16) {
-          reveal(100*(y+11)+x+10);
-        }
-        if (y-1 >= 0) {
-          reveal(100*(y+9)+x+10);
-        }
-        if (y+1 < 16 && x+1 < 16) {
-          reveal(100*(y+11)+x+11);
-        }
-        if (y+1 < 16 && x-1 >= 0) {
-          reveal(100*(y+11)+x+9);
-        }
-        if (y-1 >= 0 && x+1 < 16) {
-          reveal(100*(y+9)+x+11);
-        }
-        if (y-1 >= 0 && x-1 >= 0) {
-          reveal(100*(y+9)+x+9);
-        }
       } else {
         document.getElementById(square).classList.add("r" + Math.max(Math.abs(mines[Math.floor(square/100)-10][square % 100 - 10].toString()), Math.abs(iMines[Math.floor(square/100)-10][square % 100 - 10].toString())));
         document.getElementById(square).innerHTML = "" + mines[Math.floor(square/100)-10][square % 100 - 10] + ((iMines[Math.floor(square/100)-10][square % 100 - 10] < 0) ? iMines[Math.floor(square/100)-10][square % 100 - 10] : "+"+iMines[Math.floor(square/100)-10][square % 100 - 10]) + "i";
+        if (absMines[Math.floor(square/100)-10][square % 100 - 10] === 0) {
+          let x = square % 100 - 10;
+          let y = Math.floor(square/100)-10;
+          if (x-1 >= 0) {
+            reveal(100*(y+10)+x+9);
+          }
+          if (x+1 < 16) {
+            reveal(100*(y+10)+x+11);
+          }
+          if (y+1 < 16) {
+            reveal(100*(y+11)+x+10);
+          }
+          if (y-1 >= 0) {
+            reveal(100*(y+9)+x+10);
+          }
+          if (y+1 < 16 && x+1 < 16) {
+            reveal(100*(y+11)+x+11);
+          }
+          if (y+1 < 16 && x-1 >= 0) {
+            reveal(100*(y+11)+x+9);
+          }
+          if (y-1 >= 0 && x+1 < 16) {
+            reveal(100*(y+9)+x+11);
+          }
+          if (y-1 >= 0 && x-1 >= 0) {
+            reveal(100*(y+9)+x+9);
+          }
+        }
       }
     }
   } else {
