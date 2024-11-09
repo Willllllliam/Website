@@ -229,7 +229,7 @@ function generate() {
   }
 }
 function reveal(square) {
-  console.log(square)
+  console.log(square);
   console.log(square % 100 - 10);
   console.log(Math.floor(square/100)-10);
   console.log("\n");
@@ -256,28 +256,28 @@ function reveal(square) {
         }
       } else if (absMines[Math.floor(square/100)-10][square % 100 - 10] === 0) {
         if (square % 100 - 11 >= 0) {
-          reveal(square-1)
+          reveal(square-1);
         }
         if (square % 100 - 9 < 16) {
-          reveal(square+1)
+          reveal(square+1);
         }
         if (Math.floor(square/100)-9 < 16) {
-          reveal(square+100)
+          reveal(square+100);
         }
         if (Math.floor(square/100)-11 >= 0) {
-          reveal(square-100)
+          reveal(square-100);
         }
         if (Math.floor(square/100)-9 < 16 && square % 100 - 9 < 16) {
-          reveal(square+101)
+          reveal(square+101);
         }
         if (Math.floor(square/100)-9 < 16 && square % 100 - 11 >= 0) {
-          reveal(square+99)
+          reveal(square+99);
         }
         if (Math.floor(square/100)-11 >= 0 && square % 100 - 9 < 16) {
-          reveal(square-99)
+          reveal(square-99);
         }
         if (Math.floor(square/100)-11 >= 0 && square % 100 - 11 >= 0) {
-          reveal(square-101)
+          reveal(square-101);
         }
       } else {
         document.getElementById(square).classList.add("r" + Math.max(Math.abs(mines[Math.floor(square/100)-10][square % 100 - 10].toString()), Math.abs(iMines[Math.floor(square/100)-10][square % 100 - 10].toString())));
