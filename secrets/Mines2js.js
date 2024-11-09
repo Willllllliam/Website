@@ -255,29 +255,31 @@ function reveal(square) {
           }
         }
       } else if (absMines[Math.floor(square/100)-10][square % 100 - 10] === 0) {
-        if (square % 100 - 11 >= 0) {
-          reveal(square-1);
+        let x = square % 100 - 10;
+        let y = Math.floor(square/100)-10;
+        if (x-1 >= 0) {
+          reveal(100*(y+10)+x+9);
         }
-        if (square % 100 - 9 < 16) {
-          reveal(square+1);
+        if (x+1 < 16) {
+          reveal(100*(y+10)+x+11);
         }
-        if (Math.floor(square/100)-9 < 16) {
-          reveal(square+100);
+        if (y+1 < 16) {
+          reveal(100*(y+11)+x+10);
         }
-        if (Math.floor(square/100)-11 >= 0) {
-          reveal(square-100);
+        if (y-1 >= 0) {
+          reveal(100*(y+9)+x+10);
         }
-        if (Math.floor(square/100)-9 < 16 && square % 100 - 9 < 16) {
-          reveal(square+101);
+        if (y+1 < 16 && x+1 < 16) {
+          reveal(100*(y+11)+x+11);
         }
-        if (Math.floor(square/100)-9 < 16 && square % 100 - 11 >= 0) {
-          reveal(square+99);
+        if (y+1 < 16 && x-1 >= 0) {
+          reveal(100*(y+11)+x+9);
         }
-        if (Math.floor(square/100)-11 >= 0 && square % 100 - 9 < 16) {
-          reveal(square-99);
+        if (y-1 >= 0 && x+1 < 16) {
+          reveal(100*(y+9)+x+11);
         }
-        if (Math.floor(square/100)-11 >= 0 && square % 100 - 11 >= 0) {
-          reveal(square-101);
+        if (y-1 >= 0 && x-1 >= 0) {
+          reveal(100*(y+9)+x+9);
         }
       } else {
         document.getElementById(square).classList.add("r" + Math.max(Math.abs(mines[Math.floor(square/100)-10][square % 100 - 10].toString()), Math.abs(iMines[Math.floor(square/100)-10][square % 100 - 10].toString())));
