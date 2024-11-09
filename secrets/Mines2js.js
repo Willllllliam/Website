@@ -236,7 +236,7 @@ function reveal(square) {
     // Digging
     if (!document.getElementById(square).classList.contains("flag")) {
       document.getElementById(square).classList.add("r");
-      if(Math.abs(mines[Math.floor(square/100)-10][square % 100 - 10]) === 9 || Math.abs(iMines[Math.floor(square/100)-10][square % 100 - 10]) === 9) {
+      if(absMines[Math.floor(square/100)-10][square % 100 - 10] === 9) {
         document.getElementById("top").innerHTML = "YOU LOSE!";
         document.getElementById(square).innerHTML = "";
         document.getElementById("fav").href = "2minefav.png"
@@ -252,6 +252,31 @@ function reveal(square) {
               document.getElementById(s).innerHTML = "" + mines[y][x] + ((iMines[y][x] < 0) ? iMines[y][x] : "+"+iMines[y][x]) + "i";
             }
           }
+        }
+      } else if (absMines[Math.floor(square/100)-10][square % 100 - 10] === 0) {
+        if (square % 100 - 11 >= 0) {
+          reveal(square-1)
+        }
+        if (square % 100 - 9 < 16) {
+          reveal(square+1)
+        }
+        if (Math.floor(square/100)-9 < 16) {
+          reveal(square+100)
+        }
+        if (Math.floor(square/100)-11 >= 0) {
+          reveal(square-100)
+        }
+        if (Math.floor(square/100)-9 < 16 && square % 100 - 9 < 16) {
+          reveal(square+101)
+        }
+        if (Math.floor(square/100)-9 < 16 && square % 100 - 11 >= 0) {
+          reveal(square+99)
+        }
+        if (Math.floor(square/100)-11 >= 0 && square % 100 - 9 < 16) {
+          reveal(square-99)
+        }
+        if (Math.floor(square/100)-11 >= 0 && square % 100 - 11 >= 0) {
+          reveal(square-101)
         }
       } else {
         document.getElementById(square).classList.add("r" + Math.max(Math.abs(mines[Math.floor(square/100)-10][square % 100 - 10].toString()), Math.abs(iMines[Math.floor(square/100)-10][square % 100 - 10].toString())));
