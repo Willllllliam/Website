@@ -223,7 +223,7 @@ function generate() {
         }
         absMines[y][x] = adj;
       } else {
-        absMines[y][x] = Math.abs(mines[y][x]) + Math.abs(iMines[y][x])
+        absMines[y][x] = 9;
       }
     }
   }
