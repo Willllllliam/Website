@@ -172,7 +172,7 @@ function generate() {
   for(let x = 0; x < 16; x++) {
     for(let y = 0; y < 16; y++) {
       adj = 0;
-      if (iMines[y][x] !== 9 && iMines[y][x] !== -9) {
+      if (iMines[y][x] !== 9 && iMines[y][x] !== -9 && mines[y][x] !== 9 && mines[y][x] !== -9) {
         if (x-1 >= 0) {
           adj += (iMines[y][x-1] === 9) ? 1 : 0;
           adj += (iMines[y][x-1] === -9) ? 1 : 0;
