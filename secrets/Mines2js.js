@@ -50,7 +50,7 @@ var absMines = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
                 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 var dig = true;
 var real = true;
-var pos = true;
+var sign = 1;
 var prLeft = 0;
 var nrLeft = 0;
 var piLeft = 0;
@@ -292,7 +292,7 @@ function reveal(square) {
     if (!document.getElementById(square).classList.contains("r")) {
       if (real) {
         // Real
-        if (pos) {
+        if (sign === 1) {
           // Positive
           document.getElementById(square).classList.remove("nrflag");
           if (document.getElementById(square).classList.contains("prflag")) {
@@ -308,7 +308,7 @@ function reveal(square) {
               prLeft--;
             }
           }
-        } else {
+        } else if (sign === -1) {
           // Negative
           document.getElementById(square).classList.remove("prflag");
           if (document.getElementById(square).classList.contains("nrflag")) {
@@ -324,10 +324,21 @@ function reveal(square) {
               nrLeft--;
             }
           }
+        } else if (sign === 0) {
+          // Negative
+          document.getElementById(square).classList.remove("prflag");
+          document.getElementById(square).classList.remove("nrflag");
+          if (document.getElementById(square).classList.contains("srflag")) {
+            document.getElementById(square).classList.remove("srflag");
+            document.getElementById(square).innerHTML = "_";
+          } else {
+            document.getElementById(square).classList.add("srflag");
+            document.getElementById(square).innerHTML = "";
+          }
         }
       } else {
         // Imaginary
-        if (pos) {
+        if (sign === 1) {
           // Positive
           document.getElementById(square).classList.remove("niflag");
           if (document.getElementById(square).classList.contains("piflag")) {
@@ -343,7 +354,7 @@ function reveal(square) {
               piLeft--;
             }
           }
-        } else {
+        } else if (sign === -1) {
           // Negative
           document.getElementById(square).classList.remove("piflag");
           if (document.getElementById(square).classList.contains("niflag")) {
@@ -359,6 +370,17 @@ function reveal(square) {
               niLeft--;
             }
           }
+        } else if (sign === 0) {
+          // Negative
+          document.getElementById(square).classList.remove("piflag");
+          document.getElementById(square).classList.remove("niflag");
+          if (document.getElementById(square).classList.contains("siflag")) {
+            document.getElementById(square).classList.remove("siflag");
+            document.getElementById(square).innerHTML = "_";
+          } else {
+            document.getElementById(square).classList.add("siflag");
+            document.getElementById(square).innerHTML = "";
+          }
         }
       }
     }
@@ -372,16 +394,21 @@ document.onkeydown = function (e) {
   switch (e.key) {
     case "d":
     case "f":
+    case "1":
       document.getElementById("digflag").click();
       break;
     case "r":
     case "i":
+    case "2":
       document.getElementById("realimag").click();
       break;
     case "p":
     case "n":
+    case "s":
     case "+":
     case "-":
+    case "0":
+    case "3":
       document.getElementById("posneg").click();
       break;
   }
