@@ -235,7 +235,11 @@ function reveal(square) {
   console.log("\n");
   if (dig) {
     // Digging
-    if (!document.getElementById(square).classList.contains("flag") && !document.getElementById(square).classList.contains("r")) {
+    if (document.getElementById(square).classList.contains("srflag") && document.getElementById(square).classList.contains("siflag")) {
+      document.getElementById(square).classList.remove("srflag");
+      document.getElementById(square).classList.remove("siflag");
+    }
+    if (!document.getElementById(square).classList.toString().includes("flag") && !document.getElementById(square).classList.contains("r")) {
       document.getElementById(square).classList.add("r");
       if(absMines[Math.floor(square/100)-10][square % 100 - 10] === 9) {
         document.getElementById("top").innerHTML = "YOU LOSE!";
