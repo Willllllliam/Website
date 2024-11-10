@@ -295,6 +295,7 @@ function reveal(square) {
         if (sign === 1) {
           // Positive
           document.getElementById(square).classList.remove("nrflag");
+          document.getElementById(square).classList.remove("srflag");
           if (document.getElementById(square).classList.contains("prflag")) {
             document.getElementById(square).classList.remove("prflag");
             document.getElementById(square).innerHTML = "_";
@@ -311,6 +312,7 @@ function reveal(square) {
         } else if (sign === -1) {
           // Negative
           document.getElementById(square).classList.remove("prflag");
+          document.getElementById(square).classList.remove("srflag");
           if (document.getElementById(square).classList.contains("nrflag")) {
             document.getElementById(square).classList.remove("nrflag");
             document.getElementById(square).innerHTML = "_";
@@ -325,7 +327,7 @@ function reveal(square) {
             }
           }
         } else if (sign === 0) {
-          // Negative
+          // Safe
           document.getElementById(square).classList.remove("prflag");
           document.getElementById(square).classList.remove("nrflag");
           if (document.getElementById(square).classList.contains("srflag")) {
@@ -341,6 +343,7 @@ function reveal(square) {
         if (sign === 1) {
           // Positive
           document.getElementById(square).classList.remove("niflag");
+          document.getElementById(square).classList.remove("siflag");
           if (document.getElementById(square).classList.contains("piflag")) {
             document.getElementById(square).classList.remove("piflag");
             document.getElementById(square).innerHTML = "_";
@@ -357,6 +360,7 @@ function reveal(square) {
         } else if (sign === -1) {
           // Negative
           document.getElementById(square).classList.remove("piflag");
+          document.getElementById(square).classList.remove("siflag");
           if (document.getElementById(square).classList.contains("niflag")) {
             document.getElementById(square).classList.remove("niflag");
             document.getElementById(square).innerHTML = "_";
@@ -371,7 +375,7 @@ function reveal(square) {
             }
           }
         } else if (sign === 0) {
-          // Negative
+          // Safe
           document.getElementById(square).classList.remove("piflag");
           document.getElementById(square).classList.remove("niflag");
           if (document.getElementById(square).classList.contains("siflag")) {
