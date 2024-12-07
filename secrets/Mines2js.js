@@ -56,7 +56,6 @@ var nrLeft = 0;
 var piLeft = 0;
 var niLeft = 0;
 function generate() {
-  console.log(window.location.href);
   for(let i = 0; i < numMines; i++) {
     let x = Math.floor(Math.random() * 16);
     let y = Math.floor(Math.random() * 16);
