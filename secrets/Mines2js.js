@@ -250,7 +250,7 @@ function reveal(square) {
             let s = 100*(y+10)+x+10
             document.getElementById(s).classList.add("r");
             if(absMines[y][x] === 9) {
-              document.getElementById(s).classList.add("m" + ((mines[y][x] !== 0) ? ((mines[y][x] > 0) ? "pr" : "nr") : "") + ((iMines[y][x] !== 0) ? ((iMines[y][x] > 0) ? "pi" : "ni") : ""));
+              document.getElementById(s).classList.add("m" + ((Math.abs(mines[y][x]) === 9) ? ((mines[y][x] > 0) ? "pr" : "nr") : "") + ((Math.abs(iMines[y][x]) === 9) ? ((iMines[y][x] > 0) ? "pi" : "ni") : ""));
               document.getElementById(s).innerHTML = "";
             } else {
               document.getElementById(s).classList.add("r" + Math.max(Math.abs(mines[y][x].toString()), Math.abs(iMines[y][x].toString())));
