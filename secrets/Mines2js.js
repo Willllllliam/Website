@@ -249,7 +249,7 @@ function reveal(square) {
           for(let y = 0; y < 16; y++) {
             let s = 100*(y+10)+x+10
             document.getElementById(s).classList.add("r");
-            if(Math.abs(mines[y][x]) === 9 || Math.abs(iMines[y][x]) === 9) {
+            if(absMines[y][x] === 9) {
               document.getElementById(s).classList.add("m" + ((mines[y][x] !== 0) ? ((mines[y][x] > 0) ? "pr" : "nr") : "") + ((iMines[y][x] !== 0) ? ((iMines[y][x] > 0) ? "pi" : "ni") : ""));
               document.getElementById(s).innerHTML = "";
             } else {
