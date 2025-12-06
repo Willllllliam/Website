@@ -357,7 +357,7 @@ function reveal(square) {
           } else {
             document.getElementById(square).classList.add("piflag");
             document.getElementById(square).innerHTML = "";
-            if (clientInformationines[Math.floor(square/100)-10][square % 100 - 10] === 9) {
+            if (iMines[Math.floor(square/100)-10][square % 100 - 10] === 9) {
               piLeft--;
             }
           }
